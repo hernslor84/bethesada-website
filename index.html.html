@@ -1,0 +1,2451 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Institution Bethesda de Camp-Coq</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --blue: #1a3a6e;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f9f4ec;
+    --white: #ffffff;
+    --red: #c0392b;
+    --green: #1a6e3a;
+    --text: #2c2c2c;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--navy) 100%);
+    color: white;
+    padding: 0;
+    border-bottom: 3px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(201,168,76,0.03) 30px, rgba(201,168,76,0.03) 60px);
+    pointer-events: none;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .logo-circle {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    flex-shrink: 0;
+  }
+
+  .school-name h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+
+  .school-name span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  .contact-badge {
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 30px;
+    padding: 8px 20px;
+    text-align: right;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .contact-badge:hover { background: rgba(201,168,76,0.3); }
+
+  .contact-badge .label { font-size: 0.7rem; color: var(--gold-light); letter-spacing: 1px; text-transform: uppercase; }
+  .contact-badge .number { font-size: 1.1rem; font-weight: 700; color: white; }
+
+  nav {
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    padding: 14px 24px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+  }
+
+  nav a:hover, nav a.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+
+  .btn-portal {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy) !important;
+    font-weight: 900 !important;
+    border-bottom-color: transparent !important;
+    padding: 14px 28px !important;
+  }
+
+  .btn-portal:hover { opacity: 0.9; transform: none; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--cream);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(26,58,110,0.05) 0%, transparent 100%);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--navy);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 32px;
+  }
+
+  .stat { text-align: center; }
+  .stat .num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--blue); }
+  .stat .label { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ===== PAGES ===== */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ===== PEMAN SECTION ===== */
+  .section {
+    background: white;
+    padding: 60px 40px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--navy);
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .section-sub {
+    color: var(--gray);
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+  }
+
+  .payment-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .pay-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    transition: all 0.3s;
+    background: white;
+  }
+
+  .pay-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  .pay-card.featured {
+    border-color: var(--blue);
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: white;
+  }
+
+  .pay-number {
+    width: 40px; height: 40px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .pay-card.featured .pay-number { background: rgba(255,255,255,0.2); color: white; }
+
+  .pay-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 8px; }
+  .pay-card.featured h3 { color: var(--gold-light); }
+
+  .pay-amount {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--blue);
+    margin: 12px 0 4px;
+  }
+
+  .pay-card.featured .pay-amount { color: var(--gold); }
+
+  .pay-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+  .pay-card.featured .pay-desc { color: rgba(255,255,255,0.7); }
+
+  .pay-badge {
+    position: absolute;
+    top: -10px; right: 16px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ===== INFO CARDS ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    border-radius: 16px;
+    padding: 28px 24px;
+    color: white;
+    text-align: center;
+  }
+
+  .info-icon { font-size: 2rem; margin-bottom: 12px; }
+  .info-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 8px; color: var(--gold-light); }
+  .info-card p { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 30px 40px;
+    border-top: 3px solid var(--gold);
+    font-size: 0.85rem;
+  }
+
+  footer .gold { color: var(--gold); font-weight: 700; }
+
+  /* ===== PORTAL MODAL ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: white;
+    border-radius: 20px;
+    width: 420px;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    animation: modalIn 0.3s ease;
+  }
+
+  @keyframes modalIn {
+    from { transform: scale(0.9) translateY(20px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  .modal-header {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: white;
+    padding: 28px 32px 20px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
+  .modal-header p { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+
+  .close-btn {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: rgba(255,255,255,0.15);
+    border: none; color: white;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .close-btn:hover { background: rgba(255,255,255,0.3); }
+
+  .modal-body { padding: 28px 32px; }
+
+  .role-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .role-btn {
+    padding: 12px 8px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gray);
+    transition: all 0.2s;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .role-btn .role-icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+
+  .role-btn:hover, .role-btn.selected {
+    border-color: var(--blue);
+    background: var(--navy);
+    color: var(--gold);
+  }
+
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: 'Lato', sans-serif;
+    transition: border 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus { border-color: var(--blue); }
+
+  .btn-login {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+    margin-top: 8px;
+  }
+
+  .btn-login:hover { opacity: 0.9; }
+
+  .error-msg {
+    background: #fef2f2;
+    color: var(--red);
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    display: none;
+  }
+
+  /* ===== DASHBOARD ===== */
+  .dashboard { display: none; }
+  .dashboard.open { display: block; }
+
+  .dash-header {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .dash-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+  }
+
+  .dash-header span { font-size: 0.8rem; color: var(--gold-light); }
+
+  .dash-nav {
+    background: white;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    gap: 4px;
+    padding: 0 24px;
+    overflow-x: auto;
+  }
+
+  .dash-tab {
+    padding: 14px 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--gray);
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .dash-tab:hover, .dash-tab.active {
+    color: var(--navy);
+    border-bottom-color: var(--gold);
+  }
+
+  .dash-content { background: var(--light-gray); min-height: 60vh; padding: 30px 40px; }
+
+  .dash-panel { display: none; }
+  .dash-panel.active { display: block; }
+
+  .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+
+  .dash-stat {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .dash-stat .ds-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--navy); }
+  .dash-stat .ds-label { font-size: 0.78rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+
+  .table-wrap {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .table-head {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .table-head h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); }
+
+  .btn-add {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .btn-add:hover { background: var(--blue); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  th {
+    background: #f8fafc;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    font-weight: 700;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #f3f4f6;
+    color: var(--text);
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafafa; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-yellow { background: #fef3c7; color: #92400e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+
+  .action-btn {
+    background: none;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    color: var(--navy);
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    transition: all 0.2s;
+    margin-right: 4px;
+  }
+
+  .action-btn:hover { background: var(--navy); color: white; border-color: var(--navy); }
+  .action-btn.danger:hover { background: var(--red); color: white; border-color: var(--red); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .card-box {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+  }
+
+  .card-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .btn-save {
+    background: linear-gradient(135deg, var(--green), #2d8a56);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: opacity 0.2s;
+    margin-top: 12px;
+  }
+
+  .btn-save:hover { opacity: 0.85; }
+
+  .success-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--green);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 9999;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.4s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .success-toast.show { transform: translateY(0); opacity: 1; }
+
+  .logout-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-family: 'Lato', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .logout-btn:hover { background: rgba(255,255,255,0.2); }
+
+  /* ===== INSCRIPTION FORM ===== */
+  .insc-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .insc-hero {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    border-radius: 20px;
+    padding: 36px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .insc-hero-icon { font-size: 3.5rem; flex-shrink: 0; }
+
+  .insc-hero h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+    color: var(--gold-light);
+  }
+
+  .insc-hero p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  .insc-step {
+    background: white;
+    border-radius: 16px;
+    border: 2px solid #e5e7eb;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .insc-step.active-step { border-color: var(--gold); }
+
+  .insc-step-header {
+    background: #f8fafc;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .step-num {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .insc-step-header h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+  }
+
+  .insc-step-body { padding: 24px; }
+
+  .insc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .insc-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  .insc-field { display: flex; flex-direction: column; gap: 6px; }
+  .insc-field.full { grid-column: 1 / -1; }
+
+  .insc-field label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+  }
+
+  .insc-field label .req { color: var(--red); margin-left: 2px; }
+
+  .insc-field input,
+  .insc-field select,
+  .insc-field textarea {
+    padding: 11px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-family: 'Lato', sans-serif;
+    outline: none;
+    transition: border 0.2s;
+    color: var(--text);
+    background: white;
+  }
+
+  .insc-field input:focus,
+  .insc-field select:focus,
+  .insc-field textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(26,58,110,0.08);
+  }
+
+  .insc-field textarea { resize: vertical; min-height: 80px; }
+
+  .insc-field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+  .photo-upload {
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fafafa;
+  }
+
+  .photo-upload:hover { border-color: var(--gold); background: #fffbf0; }
+  .photo-upload input { display: none; }
+  .photo-upload .pu-icon { font-size: 2rem; margin-bottom: 8px; }
+  .photo-upload .pu-text { font-size: 0.85rem; color: var(--gray); }
+  .photo-upload .pu-preview { max-width: 100px; border-radius: 8px; margin-top: 10px; }
+
+  .insc-submit-bar {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .insc-submit-bar p { color: rgba(255,255,255,0.8); font-size: 0.85rem; }
+  .insc-submit-bar p strong { color: var(--gold-light); }
+
+  .btn-insc-submit {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    border: none;
+    padding: 14px 36px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-insc-submit:hover { opacity: 0.9; transform: scale(1.02); }
+
+  .insc-success {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .insc-success .check-circle {
+    width: 80px; height: 80px;
+    background: linear-gradient(135deg, var(--green), #2d8a56);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 20px;
+    animation: popIn 0.5s ease;
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .insc-success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .insc-success p { color: var(--gray); margin-bottom: 6px; }
+  .insc-success .ref { background: var(--navy); color: var(--gold); padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: 700; margin: 12px 0; font-size: 1.1rem; }
+
+  /* Dashboard inscriptions tab */
+  .insc-card {
+    background: white;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .insc-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .insc-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  .insc-card-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px;
+    font-size: 0.83rem;
+    color: var(--gray);
+  }
+
+  .insc-card-body span strong { color: var(--text); }
+
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-bar input, .filter-bar select {
+    padding: 9px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-family: 'Lato', sans-serif;
+    outline: none;
+  }
+
+  .filter-bar input:focus, .filter-bar select:focus { border-color: var(--blue); }
+
+  /* ===== FICHE PEMAN & RESI ===== */
+  .fiche-wrap { max-width: 900px; }
+
+  .fiche-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .fiche-tab-btn {
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: 2px solid #e5e7eb;
+    background: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    color: var(--gray);
+    transition: all 0.2s;
+  }
+
+  .fiche-tab-btn.active, .fiche-tab-btn:hover {
+    background: var(--navy);
+    color: var(--gold);
+    border-color: var(--navy);
+  }
+
+  .fiche-section { display: none; }
+  .fiche-section.active { display: block; }
+
+  /* Fiche form */
+  .fiche-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .fiche-form-grid .full { grid-column: 1 / -1; }
+
+  .peman-progress {
+    display: flex;
+    gap: 0;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #e5e7eb;
+  }
+
+  .peman-step {
+    flex: 1;
+    padding: 14px 12px;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: #f8fafc;
+    color: var(--gray);
+    border-right: 1px solid #e5e7eb;
+    transition: all 0.3s;
+  }
+
+  .peman-step:last-child { border-right: none; }
+  .peman-step.done { background: #d1fae5; color: #065f46; }
+  .peman-step.current { background: var(--navy); color: var(--gold); }
+  .peman-step .ps-num { font-size: 1.1rem; display: block; }
+
+  /* Resi print modal */
+  .resi-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .resi-overlay.open { display: flex; }
+
+  .resi-container {
+    background: white;
+    width: 520px;
+    max-width: 96vw;
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    animation: modalIn 0.3s ease;
+  }
+
+  .resi-actions {
+    display: flex;
+    gap: 10px;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f8fafc;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .btn-print {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: opacity 0.2s;
+  }
+
+  .btn-print:hover { opacity: 0.85; }
+
+  .btn-close-resi {
+    background: #f3f4f6;
+    color: var(--text);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    margin-left: auto;
+  }
+
+  /* The actual receipt design */
+  .resi-doc {
+    padding: 32px;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .resi-header {
+    text-align: center;
+    border-bottom: 3px double var(--navy);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .resi-school-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .resi-school-sub {
+    font-size: 0.78rem;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .resi-title {
+    display: inline-block;
+    margin: 14px auto 0;
+    background: var(--navy);
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+  }
+
+  .resi-ref {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+
+  .resi-ref strong { color: var(--navy); font-size: 0.95rem; }
+
+  .resi-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+    margin-bottom: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .resi-info-item { font-size: 0.83rem; }
+  .resi-info-item .ri-label { color: var(--gray); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .resi-info-item .ri-val { font-weight: 700; color: var(--navy); }
+
+  .resi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+  }
+
+  .resi-table th {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .resi-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .resi-table tr:last-child td { border-bottom: none; }
+
+  .resi-total-row {
+    background: #f0fdf4;
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #86efac;
+  }
+
+  .resi-total-row .rt-label { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+  .resi-total-row .rt-amount { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--green); }
+
+  .resi-footer {
+    border-top: 2px dashed #e5e7eb;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.78rem;
+    color: var(--gray);
+  }
+
+  .resi-sig {
+    text-align: center;
+    min-width: 120px;
+  }
+
+  .resi-sig-line {
+    border-bottom: 1px solid var(--navy);
+    margin-bottom: 4px;
+    height: 36px;
+  }
+
+  .resi-stamp {
+    width: 70px; height: 70px;
+    border: 3px solid var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    opacity: 0.3;
+    line-height: 1.2;
+  }
+
+  /* Payment list cards */
+  .fiche-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .fiche-card.p1 { border-left-color: var(--gold); }
+  .fiche-card.p2 { border-left-color: var(--blue); }
+  .fiche-card.p3 { border-left-color: var(--green); }
+
+  .fiche-card-info { flex: 1; min-width: 200px; }
+  .fiche-card-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); font-weight: 700; }
+  .fiche-card-meta { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+
+  .fiche-card-amounts {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .amt-pill {
+    background: #f3f4f6;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+  }
+
+  .amt-pill.paid { background: #d1fae5; color: #065f46; }
+  .amt-pill.pending { background: #fef3c7; color: #92400e; }
+  .amt-pill.unpaid { background: #fee2e2; color: #991b1b; }
+
+  @media print {
+    body > *:not(#resiOverlay) { display: none !important; }
+    .resi-overlay { display: flex !important; position: static !important; background: none !important; }
+    .resi-container { box-shadow: none !important; max-height: none !important; width: 100% !important; }
+    .resi-actions { display: none !important; }
+    .resi-doc { padding: 0 !important; }
+  }
+
+
+  @media (max-width: 768px) {
+    .header-top { padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
+    .school-name h1 { font-size: 1.2rem; }
+    nav a { padding: 12px 14px; font-size: 0.78rem; }
+    .hero { padding: 40px 20px; }
+    .hero h2 { font-size: 2rem; }
+    .hero-stats { gap: 24px; }
+    .section { padding: 40px 20px; }
+    .dash-content { padding: 20px; }
+    .dash-header { padding: 16px 20px; flex-wrap: wrap; gap: 8px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== MAIN SITE ===== -->
+<div id="mainSite">
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div class="logo-area">
+        <div class="logo-circle">🎓</div>
+        <div class="school-name">
+          <h1>Institution Bethesda</h1>
+          <span>de Camp-Coq — Depti 2000</span>
+        </div>
+      </div>
+      <div class="contact-badge" onclick="callSchool()">
+        <div class="label">📞 Kontakte Nou</div>
+        <div class="number">+509 44 06 9641</div>
+      </div>
+    </div>
+    <nav>
+      <a class="active" onclick="showPage('accueil')">🏠 Akèy</a>
+      <a onclick="showPage('peman')">💳 Peman</a>
+      <a onclick="showPage('matieres')">📚 Matyè</a>
+      <a onclick="showPage('contact')">📞 Kontak</a>
+      <a class="btn-portal nav-right" onclick="openPortal()">🔐 Pòtal Administrasyon</a>
+    </nav>
+  </header>
+
+  <!-- PAGE: ACCUEIL -->
+  <div id="page-accueil" class="page active">
+    <div class="hero">
+      <div class="hero-badge">✨ Ane Lekòl 2024–2025</div>
+      <h2>Bienveni nan<br>Institution Bethesda</h2>
+      <p>Yon lekòl ki la pou fòme jenerasyons ki kapab, ki respektab, ki gen valè — Camp-Coq, Nò Ayiti.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button onclick="showPage('peman')" style="background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:14px 32px;border:none;border-radius:30px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Lato',sans-serif">Wè Enfòmasyon Peman</button>
+        <button onclick="callSchool()" style="background:transparent;color:var(--navy);padding:14px 32px;border:2px solid var(--navy);border-radius:30px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Lato',sans-serif">📞 Rele Lekòl la</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">500+</div><div class="label">Elèv</div></div>
+        <div class="stat"><div class="num">25+</div><div class="label">Pwofesè</div></div>
+        <div class="stat"><div class="num">6</div><div class="label">Nivo Étid</div></div>
+        <div class="stat"><div class="num">24+</div><div class="label">Ane Eksperyans</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div style="max-width:1100px;margin:0 auto">
+        <div class="section-title">Poukisa chwazi Bethesda?</div>
+        <div class="section-sub">Nou ofri yon edikasyon konplè pou tout timoun nan zòn Camp-Coq</div>
+        <div class="info-grid">
+          <div class="info-card"><div class="info-icon">📖</div><h3>Pwogram Solid</h3><p>Pwogram ki konfòm ak egzijans Ministè Edikasyon ak règleman nasyonal yo.</p></div>
+          <div class="info-card"><div class="info-icon">👨‍🏫</div><h3>Pwofesè Kalify</h3><p>Ekip ensèyan eksperyanse ak pwofesyonèl ki dedye yo pou siksè elèv yo.</p></div>
+          <div class="info-card"><div class="info-icon">🏆</div><h3>Rezilta Ekselan</h3><p>Plizyè elèv nou yo reyisi ekzamen ofisyèl chak ane ak tòl elve.</p></div>
+          <div class="info-card"><div class="info-icon">🤝</div><h3>Kominote Solid</h3><p>Yon espas kote paran, elèv ak pwofesè travay ansanm nan respè ak konfyans.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: PEMAN -->
+  <div id="page-peman" class="page">
+    <div class="section">
+      <div style="max-width:1100px;margin:0 auto">
+        <div class="section-title">💳 Enfòmasyon Peman</div>
+        <div class="section-sub">Peman se divize an 3 pati pou fasilite fanmi elèv yo</div>
+        <div class="payment-cards">
+          <div class="pay-card" id="pc1">
+            <div class="pay-number">1</div>
+            <h3>Frè Enskripsyon + Frè Antre</h3>
+            <div class="pay-amount" id="amt1">5,000 HTG</div>
+            <p class="pay-desc">Premye peman pou enrejistreman elèv la ansanm ak frè administratif antre nan lekòl la. Dwe peye avan kòmansman ane lekòl.</p>
+          </div>
+          <div class="pay-card featured" id="pc2">
+            <div class="pay-badge">Pi enpòtan</div>
+            <div class="pay-number">2</div>
+            <h3>Premye Vèsman</h3>
+            <div class="pay-amount" id="amt2">8,000 HTG</div>
+            <p class="pay-desc">Premye vèsman ki kouvri premye semès ane lekòl la. Dwe peye anvan 15 Oktòb.</p>
+          </div>
+          <div class="pay-card" id="pc3">
+            <div class="pay-number">3</div>
+            <h3>Dezyèm Vèsman</h3>
+            <div class="pay-amount" id="amt3">8,000 HTG</div>
+            <p class="pay-desc">Dezyèm vèsman ki kouvri dezyèm semès ane lekòl la. Dwe peye anvan 15 Fevriye.</p>
+          </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:16px;padding:24px 32px;margin-top:32px;color:white;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div style="font-size:2.5rem">💰</div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:4px">Total Ane Lekòl: <span id="totalAmt" style="color:var(--gold-light)">21,000 HTG</span></div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.7)">Pou enfòmasyon ak peman, kontakte nou nan <strong style="color:var(--gold)">+509 44 06 9641</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: MATIERES -->
+  <div id="page-matieres" class="page">
+    <div class="section">
+      <div style="max-width:1100px;margin:0 auto">
+        <div class="section-title">📚 Matyè ak Koyefisyan</div>
+        <div class="section-sub">Pwogram lekòl la selon nivo étid yo</div>
+        <div class="table-wrap">
+          <div class="table-head">
+            <h3>Lis Matyè — Nivo Fondamantal</h3>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Matyè</th><th>Koyefisyan</th><th>Nivo</th><th>Pwofesè</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Kreyòl</td><td><span class="badge badge-blue">3</span></td><td>1F–6F</td><td>M. Jean Baptiste</td></tr>
+              <tr><td>Fransè</td><td><span class="badge badge-blue">4</span></td><td>1F–6F</td><td>Mme. Pierre Louis</td></tr>
+              <tr><td>Matematik</td><td><span class="badge badge-blue">5</span></td><td>1F–6F</td><td>M. Toussaint</td></tr>
+              <tr><td>Syans Natirèl</td><td><span class="badge badge-blue">3</span></td><td>3F–6F</td><td>Mme. Dorcé</td></tr>
+              <tr><td>Istwa ak Jewografi</td><td><span class="badge badge-blue">3</span></td><td>3F–6F</td><td>M. Desrosiers</td></tr>
+              <tr><td>Anglè</td><td><span class="badge badge-blue">2</span></td><td>4F–6F</td><td>Mme. Francois</td></tr>
+              <tr><td>Edikasyon Sivik</td><td><span class="badge badge-blue">2</span></td><td>1F–6F</td><td>M. Paul</td></tr>
+              <tr><td>Relijyon</td><td><span class="badge badge-blue">1</span></td><td>1F–6F</td><td>M. Bazile</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: INSCRIPTION (Piblik — enfòmasyon sèlman) -->
+  <div id="page-inscription" class="page">
+    <div class="section">
+      <div style="max-width:600px;margin:0 auto;text-align:center;padding:40px 20px">
+        <div style="font-size:4rem;margin-bottom:20px">🔒</div>
+        <div class="section-title">Enskripsyon — Aksè Sekrè</div>
+        <p style="color:var(--gray);font-size:1rem;line-height:1.7;margin-bottom:28px">
+          Fòmilè enskripsyon an rezerve pou sekretè lekòl la. Pou enskripsyon pitit ou, tanpri kontakte biwo lekòl la dirèkteman.
+        </p>
+        <div style="background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:16px;padding:28px;color:white;margin-bottom:20px">
+          <div style="font-size:2rem;margin-bottom:10px">📞</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:6px">Rele Biwo Lekòl la</div>
+          <div style="font-size:1.5rem;font-weight:900;color:var(--gold-light)">+509 44 06 9641</div>
+          <div style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-top:8px">Lendi – Vandredi &nbsp;|&nbsp; 8h AM – 4h PM</div>
+        </div>
+        <button onclick="openPortal()" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;padding:14px 32px;border-radius:30px;font-size:1rem;font-weight:900;cursor:pointer;font-family:'Lato',sans-serif">
+          🔐 Konekte kòm Sekretè
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="page-contact" class="page">
+    <div class="section">
+      <div style="max-width:700px;margin:0 auto">
+        <div class="section-title">📞 Kontakte Nou</div>
+        <div class="section-sub">Nou disponib pou reponn tout kesyon ou genyen</div>
+        <div class="info-grid" style="grid-template-columns:1fr 1fr">
+          <div class="info-card"><div class="info-icon">📱</div><h3>Telefòn</h3><p style="font-size:1.1rem;font-weight:700;color:var(--gold-light)">+509 44 06 9641</p></div>
+          <div class="info-card"><div class="info-icon">📍</div><h3>Adrès</h3><p>Camp-Coq, Nò Ayiti</p></div>
+          <div class="info-card"><div class="info-icon">⏰</div><h3>Orè Biwo</h3><p>Lendi – Vandredi<br>8h AM – 4h PM</p></div>
+          <div class="info-card"><div class="info-icon">🏫</div><h3>Lekòl la</h3><p>Institution Bethesda<br>Fondasyon: 2000</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="gold">Institution Bethesda de Camp-Coq</div>
+    <div style="margin-top:6px">Camp-Coq, Nò Ayiti &nbsp;|&nbsp; 📞 +509 44 06 9641 &nbsp;|&nbsp; © 2025 Tout dwa rezève</div>
+  </footer>
+</div>
+
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal-overlay" id="portalModal">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="close-btn" onclick="closePortal()">✕</button>
+      <div style="font-size:2.5rem;margin-bottom:8px">🔐</div>
+      <h2>Pòtal Administrasyon</h2>
+      <p>Institution Bethesda de Camp-Coq</p>
+    </div>
+    <div class="modal-body">
+      <div style="font-size:0.82rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Chwazi Wòl Ou</div>
+      <div class="role-selector">
+        <button class="role-btn selected" onclick="selectRole(this,'direktè')">
+          <span class="role-icon">👨‍💼</span>Direktè
+        </button>
+        <button class="role-btn" onclick="selectRole(this,'sansè')">
+          <span class="role-icon">📊</span>Sansè
+        </button>
+        <button class="role-btn" onclick="selectRole(this,'sekretè')">
+          <span class="role-icon">📋</span>Sekretè
+        </button>
+        <button class="role-btn" onclick="selectRole(this,'sivèyan')">
+          <span class="role-icon">🔍</span>Sivèyan
+        </button>
+      </div>
+      <div class="error-msg" id="loginError">❌ Non itilizatè oswa modpas la pa bon. Eseye ankò.</div>
+      <div class="form-group">
+        <label>Non Itilizatè</label>
+        <input type="text" id="loginUser" placeholder="Antre non ou..." />
+      </div>
+      <div class="form-group">
+        <label>Modpas</label>
+        <input type="password" id="loginPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()" />
+      </div>
+      <button class="btn-login" onclick="doLogin()">Konekte →</button>
+      <div style="text-align:center;margin-top:14px;font-size:0.78rem;color:var(--gray)">Pou reyinisyalize aksè, kontakte: <strong>+509 44 06 9641</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DASHBOARD ===== -->
+<div class="dashboard" id="dashboard">
+  <div class="dash-header">
+    <div>
+      <h2>🏫 Pòtal — <span id="dashRole" style="color:var(--gold)"></span></h2>
+      <span>Institution Bethesda de Camp-Coq</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span id="dashUser" style="font-size:0.85rem;color:var(--gold-light)"></span>
+      <button class="logout-btn" onclick="doLogout()">⬅ Dekonekte</button>
+    </div>
+  </div>
+
+  <div class="dash-nav" id="dashNav"></div>
+
+  <div class="dash-content">
+
+    <!-- TAB: Tableau de bord -->
+    <div class="dash-panel active" id="tab-overview">
+      <div class="dash-grid">
+        <div class="dash-stat"><div class="ds-num">524</div><div class="ds-label">Total Elèv</div></div>
+        <div class="dash-stat"><div class="ds-num">28</div><div class="ds-label">Anplwaye</div></div>
+        <div class="dash-stat"><div class="ds-num">87%</div><div class="ds-label">To Peman</div></div>
+        <div class="dash-stat"><div class="ds-num">6</div><div class="ds-label">Klas Aktif</div></div>
+      </div>
+      <div class="card-box">
+        <h3>📢 Anyès Resan</h3>
+        <table>
+          <thead><tr><th>Dat</th><th>Evènman</th><th>Responsab</th><th>Estati</th></tr></thead>
+          <tbody>
+            <tr><td>12 Jan 2025</td><td>Konsèy pwofesè</td><td>Direktè</td><td><span class="badge badge-green">Fini</span></td></tr>
+            <tr><td>20 Jan 2025</td><td>Reyinyon paran</td><td>Sekretè</td><td><span class="badge badge-blue">Planifye</span></td></tr>
+            <tr><td>25 Jan 2025</td><td>Egzamen semès 1</td><td>Sansè</td><td><span class="badge badge-yellow">An kou</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB: Matyè -->
+    <div class="dash-panel" id="tab-matieres">
+      <div class="card-box">
+        <h3>📚 Jere Matyè ak Koyefisyan</h3>
+        <div class="table-wrap">
+          <div class="table-head">
+            <h3>Matyè yo</h3>
+            <button class="btn-add" onclick="addMatiere()">+ Ajoute Matyè</button>
+          </div>
+          <table id="matieresTable">
+            <thead><tr><th>Matyè</th><th>Koyefisyan</th><th>Nivo</th><th>Pwofesè</th><th>Aksyon</th></tr></thead>
+            <tbody id="matieresBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Peman -->
+    <div class="dash-panel" id="tab-peman">
+      <div class="card-box">
+        <h3>💳 Modifye Montan Peman</h3>
+        <p style="font-size:0.85rem;color:var(--gray);margin-bottom:20px">Chanje montan yo pou ane lekòl la. Klike "Sove" pou peman an pran efè sou sit la.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Frè Enskripsyon + Antre (HTG)</label>
+            <input type="number" id="setAmt1" value="5000" />
+          </div>
+          <div class="form-group">
+            <label>Premye Vèsman (HTG)</label>
+            <input type="number" id="setAmt2" value="8000" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Dezyèm Vèsman (HTG)</label>
+            <input type="number" id="setAmt3" value="8000" />
+          </div>
+          <div class="form-group">
+            <label>Total Otomatik (HTG)</label>
+            <input type="number" id="setTotal" value="21000" readonly style="background:#f3f4f6;color:var(--gray)" />
+          </div>
+        </div>
+        <button class="btn-save" onclick="savePeman()">💾 Sove Montan Peman</button>
+      </div>
+
+      <div class="card-box">
+        <h3>📊 Estati Peman Elèv yo</h3>
+        <table>
+          <thead><tr><th>Elèv</th><th>Klas</th><th>P1 Enskripsyon</th><th>P2 1e Vèsman</th><th>P3 2e Vèsman</th><th>Balans</th></tr></thead>
+          <tbody>
+            <tr><td>Marie Joseph</td><td>6F</td><td><span class="badge badge-green">✓ Peye</span></td><td><span class="badge badge-green">✓ Peye</span></td><td><span class="badge badge-yellow">⏳ Annatant</span></td><td>8,000</td></tr>
+            <tr><td>Pierre Antoine</td><td>4F</td><td><span class="badge badge-green">✓ Peye</span></td><td><span class="badge badge-red">✗ Dwe</span></td><td><span class="badge badge-red">✗ Dwe</span></td><td>16,000</td></tr>
+            <tr><td>Rose Duval</td><td>3F</td><td><span class="badge badge-green">✓ Peye</span></td><td><span class="badge badge-green">✓ Peye</span></td><td><span class="badge badge-green">✓ Peye</span></td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB: Fiche Peman -->
+    <div class="dash-panel" id="tab-fiches">
+      <div class="card-box fiche-wrap">
+        <h3>💰 Fiche de Peman ak Resi</h3>
+
+        <div class="fiche-tabs">
+          <button class="fiche-tab-btn active" onclick="switchFicheTab('new',this)">➕ Nouvo Fiche</button>
+          <button class="fiche-tab-btn" onclick="switchFicheTab('list',this)">📋 Lis Fiche yo</button>
+        </div>
+
+        <!-- SECTION: NEW FICHE -->
+        <div class="fiche-section active" id="fiche-new">
+
+          <div class="peman-progress" id="pemanProgress"></div>
+
+          <div class="fiche-form-grid">
+            <div class="form-group">
+              <label>Non Elèv <span style="color:var(--red)">*</span></label>
+              <input type="text" id="fNomElev" placeholder="Non ak Siyati elèv la" oninput="updateFicheProgress()" />
+            </div>
+            <div class="form-group">
+              <label>Klas <span style="color:var(--red)">*</span></label>
+              <select id="fKlas">
+                <option value="">Chwazi klas...</option>
+                <option>1F</option><option>2F</option><option>3F</option>
+                <option>4F</option><option>5F</option><option>6F</option>
+                <option>7F</option><option>8F</option><option>9F</option>
+                <option>Filozofi</option><option>Retòrik</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Non Paran / Tutè <span style="color:var(--red)">*</span></label>
+              <input type="text" id="fNomParan" placeholder="Non paran ki peye a" />
+            </div>
+            <div class="form-group">
+              <label>Telefòn</label>
+              <input type="tel" id="fTelParan" placeholder="+509 XX XX XXXX" />
+            </div>
+            <div class="form-group">
+              <label>Ane Lekòl</label>
+              <input type="text" id="fAneLek" value="2024–2025" />
+            </div>
+            <div class="form-group">
+              <label>Kasye / Resevwa</label>
+              <input type="text" id="fKasye" placeholder="Non kasye a" />
+            </div>
+          </div>
+
+          <div style="border-top:2px solid #e5e7eb;margin:20px 0;padding-top:20px">
+            <div style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:16px">💳 Detay Peman yo</div>
+
+            <!-- P1 -->
+            <div style="background:#fffbf0;border:2px solid var(--gold);border-radius:12px;padding:18px;margin-bottom:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+                <div style="font-weight:700;color:var(--navy)">
+                  <span style="background:var(--gold);color:var(--navy);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.8rem;margin-right:6px">1</span>
+                  Frè Enskripsyon + Antre
+                </div>
+                <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:700;cursor:pointer">
+                  <input type="checkbox" id="p1Check" onchange="updateFicheProgress()" style="width:16px;height:16px;accent-color:var(--navy)" />
+                  Peye
+                </label>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+                <div class="form-group" style="margin:0">
+                  <label>Montan (HTG)</label>
+                  <input type="number" id="p1Amt" value="5000" />
+                </div>
+                <div class="form-group" style="margin:0">
+                  <label>Dat Peman</label>
+                  <input type="date" id="p1Dat" />
+                </div>
+                <div class="form-group" style="margin:0">
+                  <label>Mòd Peman</label>
+                  <select id="p1Mode">
+                    <option>Lajan kach</option>
+                    <option>MonCash</option>
+                    <option>Virement</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- P2 -->
+            <div style="background:#eff6ff;border:2px solid var(--blue);border-radius:12px;padding:18px;margin-bottom:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+                <div style="font-weight:700;color:var(--navy)">
+                  <span style="background:var(--blue);color:white;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.8rem;margin-right:6px">2</span>
+                  Premye Vèsman
+                </div>
+                <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:700;cursor:pointer">
+                  <input type="checkbox" id="p2Check" onchange="updateFicheProgress()" style="width:16px;height:16px;accent-color:var(--navy)" />
+                  Peye
+                </label>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+                <div class="form-group" style="margin:0">
+                  <label>Montan (HTG)</label>
+                  <input type="number" id="p2Amt" value="8000" />
+                </div>
+                <div class="form-group" style="margin:0">
+                  <label>Dat Peman</label>
+                  <input type="date" id="p2Dat" />
+                </div>
+                <div class="form-group" style="margin:0">
+                  <label>Mòd Peman</label>
+                  <select id="p2Mode">
+                    <option>Lajan kach</option>
+                    <option>MonCash</option>
+                    <option>Virement</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- P3 -->
+            <div style="background:#f0fdf4;border:2px solid var(--green);border-radius:12px;padding:18px">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+                <div style="font-weight:700;color:var(--navy)">
+                  <span style="background:var(--green);color:white;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.8rem;margin-right:6px">3</span>
+                  Dezyèm Vèsman
+                </div>
+                <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:700;cursor:pointer">
+                  <input type="checkbox" id="p3Check" onchange="updateFicheProgress()" style="width:16px;height:16px;accent-color:var(--navy)" />
+                  Peye
+                </label>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+                <div class="form-group" style="margin:0">
+                  <label>Montan (HTG)</label>
+                  <input type="number" id="p3Amt" value="8000" />
+                </div>
+                <div class="form-group" style="margin:0">
+                  <label>Dat Peman</label>
+                  <input type="date" id="p3Dat" />
+                </div>
+                <div class="form-group" style="margin:0">
+                  <label>Mòd Peman</label>
+                  <select id="p3Mode">
+                    <option>Lajan kach</option>
+                    <option>MonCash</option>
+                    <option>Virement</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:16px">
+            <label>Nòt / Obsèvasyon</label>
+            <textarea id="fNote" placeholder="Nenpòt obsèvasyon sou peman sa a..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-family:'Lato',sans-serif;min-height:70px;resize:vertical;outline:none"></textarea>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+            <button class="btn-save" onclick="saveFiche()">💾 Sove Fiche Peman</button>
+            <button style="background:linear-gradient(135deg,var(--blue),#2a5aad);color:white;border:none;padding:10px 24px;border-radius:8px;font-size:0.88rem;font-weight:700;cursor:pointer;font-family:'Lato',sans-serif" onclick="saveFicheAndPrint()">🖨 Sove & Enprime Resi</button>
+          </div>
+        </div>
+
+        <!-- SECTION: LIST -->
+        <div class="fiche-section" id="fiche-list">
+          <div class="filter-bar">
+            <input type="text" id="ficheSearch" placeholder="🔍 Chèche pa non elèv..." oninput="renderFiches()" style="flex:1;min-width:180px" />
+            <select id="ficheFilterKlas" onchange="renderFiches()">
+              <option value="">Tout Klas</option>
+              <option>1F</option><option>2F</option><option>3F</option>
+              <option>4F</option><option>5F</option><option>6F</option>
+            </select>
+            <button class="btn-add" onclick="exportFiches()">⬇ Ekspòte CSV</button>
+          </div>
+          <div id="ficheList"></div>
+          <div id="ficheEmpty" style="text-align:center;padding:40px;color:var(--gray)">
+            <div style="font-size:3rem;margin-bottom:12px">📭</div>
+            <div>Pa gen fiche peman pou moman an.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="dash-panel" id="tab-users">
+      <div class="card-box">
+        <h3>👥 Jere Kont Aksè</h3>
+        <div class="table-wrap">
+          <div class="table-head">
+            <h3>Itilizatè Pòtal</h3>
+            <button class="btn-add" onclick="addUser()">+ Nouvo Itilizatè</button>
+          </div>
+          <table>
+            <thead><tr><th>Non</th><th>Non Itilizatè</th><th>Wòl</th><th>Estati</th><th>Aksyon</th></tr></thead>
+            <tbody id="usersBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Enskripsyon (Sekretè Dashboard) -->
+    <div class="dash-panel" id="tab-inscriptions">
+      <div class="card-box" style="max-width:960px">
+        <h3>📝 Jere Enskripsyon</h3>
+
+        <div class="fiche-tabs" style="margin-bottom:20px">
+          <button class="fiche-tab-btn active" onclick="switchInscTab('form',this)">➕ Nouvo Enskripsyon</button>
+          <button class="fiche-tab-btn" onclick="switchInscTab('list',this)">📋 Lis Enskripsyon yo</button>
+        </div>
+
+        <!-- ── SOUS-TAB: FÒMILÈ ── -->
+        <div id="insc-tab-form">
+
+          <!-- Success state -->
+          <div id="inscSuccess" style="display:none;text-align:center;padding:48px 20px">
+            <div style="width:72px;height:72px;background:linear-gradient(135deg,var(--green),#2d8a56);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 16px;animation:popIn 0.5s ease">✓</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:8px">Enskripsyon Anrejistre!</div>
+            <p style="color:var(--gray);margin-bottom:6px">Fiche elèv la sove avèk siksè.</p>
+            <div style="background:var(--navy);color:var(--gold);padding:8px 20px;border-radius:20px;display:inline-block;font-weight:700;margin:12px 0;font-size:1.1rem" id="inscRef">BCC-2025-0001</div>
+            <br>
+            <button onclick="resetInscDash()" style="margin-top:16px;background:var(--navy);color:white;border:none;padding:12px 28px;border-radius:30px;font-weight:700;cursor:pointer;font-family:'Lato',sans-serif">+ Nouvo Enskripsyon</button>
+          </div>
+
+          <!-- Form -->
+          <div id="inscForm">
+            <div class="insc-hero" style="margin-bottom:24px">
+              <div class="insc-hero-icon">📝</div>
+              <div>
+                <h3>Fòmilè Enskripsyon — 2024–2025</h3>
+                <p>Ranpli enfòmasyon elèv la. Tout chan ki gen <span style="color:#fca5a5">*</span> obligatwa.</p>
+              </div>
+            </div>
+
+            <!-- ETAP 1: Elèv -->
+            <div class="insc-step active-step" style="margin-bottom:16px">
+              <div class="insc-step-header">
+                <div class="step-num">1</div>
+                <h4>Enfòmasyon Elèv la</h4>
+              </div>
+              <div class="insc-step-body">
+                <div class="insc-grid" style="margin-bottom:14px">
+                  <div class="insc-field"><label>Prenon <span class="req">*</span></label><input type="text" id="ePrenom" placeholder="Prenon elèv la" /></div>
+                  <div class="insc-field"><label>Siyati <span class="req">*</span></label><input type="text" id="eSiyati" placeholder="Siyati elèv la" /></div>
+                  <div class="insc-field"><label>Dat Nesans <span class="req">*</span></label><input type="date" id="eDatNes" /></div>
+                  <div class="insc-field"><label>Sèks <span class="req">*</span></label>
+                    <select id="eSeks"><option value="">Chwazi...</option><option value="M">Gason</option><option value="F">Fi</option></select>
+                  </div>
+                  <div class="insc-field"><label>Klas Mande <span class="req">*</span></label>
+                    <select id="eKlas">
+                      <option value="">Chwazi nivo...</option>
+                      <option value="1F">1ère Fondamantal</option><option value="2F">2ème Fondamantal</option>
+                      <option value="3F">3ème Fondamantal</option><option value="4F">4ème Fondamantal</option>
+                      <option value="5F">5ème Fondamantal</option><option value="6F">6ème Fondamantal</option>
+                      <option value="7F">7ème Fondamantal</option><option value="8F">8ème Fondamantal</option>
+                      <option value="9F">9ème Fondamantal</option>
+                      <option value="Phil">Filozofi</option><option value="Rhet">Retòrik</option>
+                    </select>
+                  </div>
+                  <div class="insc-field"><label>Nasyonalite</label><input type="text" id="eNasyo" value="Ayisyen" /></div>
+                  <div class="insc-field full"><label>Adrès Rezidans <span class="req">*</span></label><input type="text" id="eAdrès" placeholder="Katye, Vil, Depatman" /></div>
+                  <div class="insc-field"><label>Lekòl Anvan</label><input type="text" id="eAnvLek" placeholder="Non lekòl anvan" /></div>
+                  <div class="insc-field"><label>Dènye Klas Fini</label><input type="text" id="eAnvKlas" placeholder="Ex: 5ème F" /></div>
+                </div>
+                <div class="insc-field">
+                  <label>Foto Elèv (opsyonèl)</label>
+                  <div class="photo-upload" onclick="document.getElementById('photoInput').click()">
+                    <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(this)" />
+                    <div class="pu-icon">📷</div>
+                    <div class="pu-text">Klike pou telechaje foto</div>
+                    <img id="photoPreview" class="pu-preview" style="display:none" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ETAP 2: Paran -->
+            <div class="insc-step" style="margin-bottom:16px">
+              <div class="insc-step-header">
+                <div class="step-num">2</div>
+                <h4>Enfòmasyon Paran / Tutè</h4>
+              </div>
+              <div class="insc-step-body">
+                <div class="insc-grid">
+                  <div class="insc-field"><label>Non Konplè Papa <span class="req">*</span></label><input type="text" id="pPapa" placeholder="Non ak Siyati" /></div>
+                  <div class="insc-field"><label>Non Konplè Manman <span class="req">*</span></label><input type="text" id="pManman" placeholder="Non ak Siyati" /></div>
+                  <div class="insc-field"><label>Telefòn Prensipal <span class="req">*</span></label><input type="tel" id="pTel1" placeholder="+509 XX XX XXXX" /></div>
+                  <div class="insc-field"><label>Telefòn Altènatif</label><input type="tel" id="pTel2" placeholder="+509 XX XX XXXX" /></div>
+                  <div class="insc-field"><label>Pwofesyon Papa</label><input type="text" id="pPwofPapa" placeholder="Ex: Komèsan" /></div>
+                  <div class="insc-field"><label>Pwofesyon Manman</label><input type="text" id="pPwofMan" placeholder="Ex: Enstikatris" /></div>
+                  <div class="insc-field full"><label>Adrès Paran (si diferan)</label><input type="text" id="pAdrès" placeholder="Katye, Vil, Depatman" /></div>
+                </div>
+                <div style="margin-top:16px;padding:14px;background:#f0f9ff;border-radius:10px;border:1px solid #bae6fd">
+                  <div style="font-weight:700;font-size:0.83rem;color:#0369a1;margin-bottom:10px">👤 Moun pou Kontakte nan Ijans</div>
+                  <div class="insc-grid">
+                    <div class="insc-field"><label>Non <span class="req">*</span></label><input type="text" id="ijNon" placeholder="Non moun ijans" /></div>
+                    <div class="insc-field"><label>Relasyon <span class="req">*</span></label>
+                      <select id="ijRel"><option value="">Chwazi...</option><option>Manman</option><option>Papa</option><option>Grann</option><option>Tonton</option><option>Matant</option><option>Frè/Sè</option><option>Lòt</option></select>
+                    </div>
+                    <div class="insc-field"><label>Telefòn Ijans <span class="req">*</span></label><input type="tel" id="ijTel" placeholder="+509 XX XX XXXX" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ETAP 3: Sante -->
+            <div class="insc-step" style="margin-bottom:16px">
+              <div class="insc-step-header">
+                <div class="step-num">3</div>
+                <h4>Sante & Enfòmasyon Espesyal</h4>
+              </div>
+              <div class="insc-step-body">
+                <div class="insc-grid">
+                  <div class="insc-field"><label>Gwoup Sangwen</label>
+                    <select id="sGwoup"><option value="">Pa konnen</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+                  </div>
+                  <div class="insc-field"><label>Alèji</label><input type="text" id="sAlerji" placeholder="Ex: Penisilin..." /></div>
+                  <div class="insc-field full"><label>Kondisyon Medikal Espesyal</label><textarea id="sMedikal" placeholder="Ekri kondisyon medikal enpòtan..." style="width:100%;padding:10px;border:2px solid #e5e7eb;border-radius:8px;font-family:'Lato',sans-serif;min-height:70px;resize:vertical;outline:none"></textarea></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ETAP 4: Dokiman & Peman -->
+            <div class="insc-step" style="margin-bottom:16px">
+              <div class="insc-step-header">
+                <div class="step-num">4</div>
+                <h4>Dokiman & Peman Initial</h4>
+              </div>
+              <div class="insc-step-body">
+                <div style="background:#fefce8;border:1px solid #fef08a;border-radius:10px;padding:14px;margin-bottom:16px">
+                  <div style="font-weight:700;font-size:0.88rem;color:#92400e;margin-bottom:8px">📋 Dokiman pou Pote</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;font-size:0.82rem;color:#78350f">
+                    <div>☐ Akte de nesans (kopi)</div><div>☐ Foto pasepò (x2)</div>
+                    <div>☐ Biyetèn dènye ane</div><div>☐ Sètifika vaksinasyon</div>
+                    <div>☐ Frè enskripsyon</div><div>☐ Kati idantifikasyon paran</div>
+                  </div>
+                </div>
+                <div class="insc-grid">
+                  <div class="insc-field"><label>Mòd Peman Prefere</label>
+                    <select id="pMode"><option value="">Chwazi...</option><option>Lajan kach nan biwo</option><option>MonCash</option><option>Virement bancaire</option></select>
+                  </div>
+                  <div class="insc-field"><label>Dat Disponib pou Peye</label><input type="date" id="pDat" /></div>
+                  <div class="insc-field full"><label>Kòmantè / Obsèvasyon Sekretè</label><textarea id="pKòm" placeholder="Nòt entèn sekretè a..." style="width:100%;padding:10px;border:2px solid #e5e7eb;border-radius:8px;font-family:'Lato',sans-serif;min-height:60px;resize:vertical;outline:none"></textarea></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:12px;flex-wrap:wrap;padding:16px;background:#f8fafc;border-radius:12px;align-items:center;justify-content:space-between">
+              <div style="font-size:0.82rem;color:var(--gray)">📞 Asistans: <strong>+509 44 06 9641</strong></div>
+              <button onclick="submitInscription()" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;padding:14px 32px;border-radius:30px;font-size:1rem;font-weight:900;cursor:pointer;font-family:'Lato',sans-serif">
+                ✅ Anrejistre Enskripsyon →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SOUS-TAB: LIS ── -->
+        <div id="insc-tab-list" style="display:none">
+          <div class="filter-bar">
+            <input type="text" id="filterName" placeholder="🔍 Chèche pa non..." oninput="renderInscriptions()" style="flex:1;min-width:180px" />
+            <select id="filterKlas" onchange="renderInscriptions()">
+              <option value="">Tout Klas</option>
+              <option value="1F">1ère F</option><option value="2F">2ème F</option>
+              <option value="3F">3ème F</option><option value="4F">4ème F</option>
+              <option value="5F">5ème F</option><option value="6F">6ème F</option>
+            </select>
+            <select id="filterStatus" onchange="renderInscriptions()">
+              <option value="">Tout Estati</option>
+              <option value="Annatant">Annatant</option>
+              <option value="Aksepte">Aksepte</option>
+              <option value="Refize">Refize</option>
+            </select>
+            <button class="btn-add" onclick="exportInscriptions()">⬇ Ekspòte</button>
+          </div>
+          <div id="inscList"></div>
+          <div id="inscEmpty" style="text-align:center;padding:40px;color:var(--gray);display:none">
+            <div style="font-size:3rem;margin-bottom:12px">📭</div>
+            <div>Pa gen demann enskripsyon pou moman an.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+<!-- ===== RESI MODAL ===== -->
+<div class="resi-overlay" id="resiOverlay">
+  <div class="resi-container">
+    <div class="resi-actions">
+      <button class="btn-print" onclick="doPrint()">🖨 Enprime / Sove PDF</button>
+      <button class="btn-close-resi" onclick="closeResi()">✕ Fèmen</button>
+    </div>
+    <div class="resi-doc" id="resiContent"></div>
+  </div>
+</div>
+
+<div class="success-toast" id="toast"></div>
+
+<script>
+// ===== DATA =====
+const USERS = [
+  { name: 'Jean-Pierre Duval', user: 'direktè', pass: 'admin123', role: 'direktè', active: true },
+  { name: 'Marie Céline', user: 'sansè', pass: 'sanse123', role: 'sansè', active: true },
+  { name: 'Paul Théodore', user: 'sekretè', pass: 'sekrete123', role: 'sekretè', active: true },
+  { name: 'Anne Claire', user: 'sivèyan', pass: 'siveyan123', role: 'sivèyan', active: true },
+];
+
+let matieres = [
+  { id:1, nom:'Kreyòl', koef:3, nivo:'1F–6F', prof:'M. Jean Baptiste' },
+  { id:2, nom:'Fransè', koef:4, nivo:'1F–6F', prof:'Mme. Pierre Louis' },
+  { id:3, nom:'Matematik', koef:5, nivo:'1F–6F', prof:'M. Toussaint' },
+  { id:4, nom:'Syans Natirèl', koef:3, nivo:'3F–6F', prof:'Mme. Dorcé' },
+  { id:5, nom:'Istwa & Jewografi', koef:3, nivo:'3F–6F', prof:'M. Desrosiers' },
+  { id:6, nom:'Anglè', koef:2, nivo:'4F–6F', prof:'Mme. Francois' },
+  { id:7, nom:'Edikasyon Sivik', koef:2, nivo:'1F–6F', prof:'M. Paul' },
+  { id:8, nom:'Relijyon', koef:1, nivo:'1F–6F', prof:'M. Bazile' },
+];
+
+let users = [...USERS];
+let currentRole = 'direktè';
+let currentLoggedUser = '';
+let selectedRoleInput = 'direktè';
+
+const ROLE_TABS = {
+  direktè: ['tab-overview','tab-inscriptions','tab-fiches','tab-matieres','tab-peman','tab-users'],
+  sansè:   ['tab-overview','tab-matieres'],
+  sekretè: ['tab-overview','tab-inscriptions','tab-fiches','tab-peman'],
+  sivèyan: ['tab-overview'],
+};
+
+const TAB_LABELS = {
+  'tab-overview': '📊 Akèy',
+  'tab-inscriptions': '📝 Enskripsyon',
+  'tab-fiches': '💰 Fiche Peman',
+  'tab-matieres': '📚 Matyè & Koyefisyan',
+  'tab-peman': '💳 Peman',
+  'tab-users': '👥 Itilizatè',
+};
+
+// ===== NAV =====
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function callSchool() {
+  window.location.href = 'tel:+50944069641';
+}
+
+// ===== PORTAL =====
+function openPortal() {
+  document.getElementById('portalModal').classList.add('open');
+}
+
+function closePortal() {
+  document.getElementById('portalModal').classList.remove('open');
+  document.getElementById('loginError').style.display = 'none';
+}
+
+function selectRole(btn, role) {
+  document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedRoleInput = role;
+}
+
+function doLogin() {
+  const u = document.getElementById('loginUser').value.trim();
+  const p = document.getElementById('loginPass').value;
+  const err = document.getElementById('loginError');
+
+  const found = users.find(x => x.user === u && x.pass === p && x.role === selectedRoleInput && x.active);
+  if (!found) {
+    err.style.display = 'block';
+    return;
+  }
+
+  err.style.display = 'none';
+  currentRole = found.role;
+  currentLoggedUser = found.name;
+  document.getElementById('dashRole').textContent = found.role.charAt(0).toUpperCase() + found.role.slice(1);
+  document.getElementById('dashUser').textContent = '👤 ' + found.name;
+
+  closePortal();
+  buildDashNav();
+  renderMatieres();
+  renderUsers();
+  updatePemanTotals();
+
+  document.getElementById('mainSite').style.display = 'none';
+  document.getElementById('dashboard').classList.add('open');
+  showDashTab('tab-overview');
+}
+
+function doLogout() {
+  document.getElementById('dashboard').classList.remove('open');
+  document.getElementById('mainSite').style.display = 'block';
+  document.getElementById('loginUser').value = '';
+  document.getElementById('loginPass').value = '';
+}
+
+// ===== DASHBOARD NAV =====
+function buildDashNav() {
+  const nav = document.getElementById('dashNav');
+  nav.innerHTML = '';
+  const tabs = ROLE_TABS[currentRole] || ['tab-overview'];
+  tabs.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'dash-tab';
+    btn.textContent = TAB_LABELS[t];
+    btn.dataset.tab = t;
+    btn.onclick = () => showDashTab(t);
+    nav.appendChild(btn);
+  });
+}
+
+function showDashTab(tabId) {
+  document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.dash-tab').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById(tabId);
+  if (el) el.classList.add('active');
+  const btn = document.querySelector(`.dash-tab[data-tab="${tabId}"]`);
+  if (btn) btn.classList.add('active');
+}
+
+// ===== MATIERES =====
+function renderMatieres() {
+  const tbody = document.getElementById('matieresBody');
+  tbody.innerHTML = '';
+  matieres.forEach(m => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><input value="${m.nom}" style="border:1px solid #e5e7eb;padding:6px 10px;border-radius:6px;width:140px;font-family:'Lato',sans-serif" onchange="matieres.find(x=>x.id===${m.id}).nom=this.value" /></td>
+      <td><input type="number" value="${m.koef}" style="border:1px solid #e5e7eb;padding:6px 10px;border-radius:6px;width:70px;font-family:'Lato',sans-serif" onchange="matieres.find(x=>x.id===${m.id}).koef=parseInt(this.value)" /></td>
+      <td><input value="${m.nivo}" style="border:1px solid #e5e7eb;padding:6px 10px;border-radius:6px;width:100px;font-family:'Lato',sans-serif" onchange="matieres.find(x=>x.id===${m.id}).nivo=this.value" /></td>
+      <td><input value="${m.prof}" style="border:1px solid #e5e7eb;padding:6px 10px;border-radius:6px;width:150px;font-family:'Lato',sans-serif" onchange="matieres.find(x=>x.id===${m.id}).prof=this.value" /></td>
+      <td>
+        <button class="action-btn" onclick="saveMatiere(${m.id})">💾 Sove</button>
+        <button class="action-btn danger" onclick="deleteMatiere(${m.id})">🗑</button>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function saveMatiere(id) {
+  // sync to public page
+  const m = matieres.find(x=>x.id===id);
+  showToast(`✓ Matyè "${m.nom}" mete ajou!`);
+}
+
+function deleteMatiere(id) {
+  if (!confirm('Eske ou vle efase matyè sa a?')) return;
+  matieres = matieres.filter(x=>x.id!==id);
+  renderMatieres();
+  showToast('🗑 Matyè efase.');
+}
+
+function addMatiere() {
+  const newId = Math.max(...matieres.map(x=>x.id)) + 1;
+  matieres.push({ id: newId, nom: 'Nouvo Matyè', koef: 1, nivo: '1F–6F', prof: '' });
+  renderMatieres();
+  showToast('+ Nouvo matyè ajoute. Modifye li epi sove.');
+}
+
+// ===== PEMAN =====
+function updatePemanTotals() {
+  const a1 = parseInt(document.getElementById('setAmt1').value) || 0;
+  const a2 = parseInt(document.getElementById('setAmt2').value) || 0;
+  const a3 = parseInt(document.getElementById('setAmt3').value) || 0;
+  document.getElementById('setTotal').value = a1+a2+a3;
+}
+
+['setAmt1','setAmt2','setAmt3'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updatePemanTotals);
+});
+
+function savePeman() {
+  const a1 = parseInt(document.getElementById('setAmt1').value)||0;
+  const a2 = parseInt(document.getElementById('setAmt2').value)||0;
+  const a3 = parseInt(document.getElementById('setAmt3').value)||0;
+  const tot = a1+a2+a3;
+
+  document.getElementById('amt1').textContent = a1.toLocaleString('fr-HT') + ' HTG';
+  document.getElementById('amt2').textContent = a2.toLocaleString('fr-HT') + ' HTG';
+  document.getElementById('amt3').textContent = a3.toLocaleString('fr-HT') + ' HTG';
+  document.getElementById('totalAmt').textContent = tot.toLocaleString('fr-HT') + ' HTG';
+
+  showToast('✓ Montan peman yo mete ajou sou sit la!');
+}
+
+// ===== USERS =====
+function renderUsers() {
+  const tbody = document.getElementById('usersBody');
+  tbody.innerHTML = '';
+  users.forEach((u, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${u.name}</td>
+      <td><code style="background:#f3f4f6;padding:2px 8px;border-radius:4px">${u.user}</code></td>
+      <td><span class="badge badge-blue">${u.role}</span></td>
+      <td>${u.active ? '<span class="badge badge-green">Aktif</span>' : '<span class="badge badge-red">Inaktif</span>'}</td>
+      <td>
+        <button class="action-btn" onclick="editUser(${i})">✏ Modifye</button>
+        <button class="action-btn danger" onclick="toggleUser(${i})">${u.active?'🔒 Dezaktive':'🔓 Aktive'}</button>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function editUser(i) {
+  const u = users[i];
+  const np = prompt(`Chanje modpas pou ${u.name} (${u.role}):\n(Kite vid pou pa chanje)`, '');
+  if (np === null) return;
+  if (np.trim()) {
+    users[i].pass = np.trim();
+    showToast(`✓ Modpas "${u.name}" chanje!`);
+  }
+  const nn = prompt(`Chanje non itilizatè (aktyèl: ${u.user}):`, u.user);
+  if (nn && nn.trim()) {
+    users[i].user = nn.trim();
+    renderUsers();
+    showToast(`✓ Non itilizatè "${u.name}" mete ajou!`);
+  }
+}
+
+function toggleUser(i) {
+  users[i].active = !users[i].active;
+  renderUsers();
+  showToast(users[i].active ? `✓ Kont ${users[i].name} aktive.` : `🔒 Kont ${users[i].name} dezaktive.`);
+}
+
+function addUser() {
+  const name = prompt('Non konplè itilizatè nouvo a:');
+  if (!name) return;
+  const user = prompt('Non itilizatè (login):');
+  if (!user) return;
+  const pass = prompt('Modpas:');
+  if (!pass) return;
+  const role = prompt('Wòl (direktè / sansè / sekretè / sivèyan):');
+  if (!role) return;
+  users.push({ name, user, pass, role: role.toLowerCase(), active: true });
+  renderUsers();
+  showToast(`✓ Kont "${name}" kreye!`);
+}
+
+let inscriptions = [];
+let inscCounter = 1;
+
+// ===== INSCRIPTION FORM =====
+function previewPhoto(input) {
+  const prev = document.getElementById('photoPreview');
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => { prev.src = e.target.result; prev.style.display = 'block'; };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+// ===== INSCRIPTION SUB-TAB SWITCH =====
+function switchInscTab(tab, btn) {
+  document.querySelectorAll('#tab-inscriptions .fiche-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('insc-tab-form').style.display = tab === 'form' ? 'block' : 'none';
+  document.getElementById('insc-tab-list').style.display = tab === 'list' ? 'block' : 'none';
+  if (tab === 'list') renderInscriptions();
+}
+
+function submitInscription() {
+  // Validation
+  const required = [
+    { id: 'ePrenom', label: 'Prenon elèv' },
+    { id: 'eSiyati', label: 'Siyati elèv' },
+    { id: 'eDatNes', label: 'Dat nesans' },
+    { id: 'eSeks', label: 'Sèks' },
+    { id: 'eKlas', label: 'Klas' },
+    { id: 'eAdrès', label: 'Adrès rezidans' },
+    { id: 'pPapa', label: 'Non papa' },
+    { id: 'pManman', label: 'Non manman' },
+    { id: 'pTel1', label: 'Telefòn prensipal' },
+    { id: 'ijNon', label: 'Non moun ijans' },
+    { id: 'ijRel', label: 'Relasyon ijans' },
+    { id: 'ijTel', label: 'Telefòn ijans' },
+  ];
+
+  for (const f of required) {
+    const el = document.getElementById(f.id);
+    if (!el || !el.value.trim()) {
+      if (el) {
+        el.style.borderColor = 'var(--red)';
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.focus();
+        setTimeout(() => el.style.borderColor = '#e5e7eb', 3000);
+      }
+      showToast(`⚠ Chan "${f.label}" obligatwa!`);
+      return;
+    }
+  }
+
+  // Build record
+  const ref = `BCC-2025-${String(inscCounter).padStart(4,'0')}`;
+  inscCounter++;
+
+  const record = {
+    ref,
+    prenom: document.getElementById('ePrenom').value.trim(),
+    siyati: document.getElementById('eSiyati').value.trim(),
+    datNes: document.getElementById('eDatNes').value,
+    seks: document.getElementById('eSeks').value,
+    klas: document.getElementById('eKlas').value,
+    adrès: document.getElementById('eAdrès').value.trim(),
+    anvLek: document.getElementById('eAnvLek')?.value.trim() || '',
+    papa: document.getElementById('pPapa').value.trim(),
+    manman: document.getElementById('pManman').value.trim(),
+    tel1: document.getElementById('pTel1').value.trim(),
+    tel2: document.getElementById('pTel2')?.value.trim() || '',
+    ijNon: document.getElementById('ijNon').value.trim(),
+    ijRel: document.getElementById('ijRel').value,
+    ijTel: document.getElementById('ijTel').value.trim(),
+    alèji: document.getElementById('sAlerji')?.value.trim() || '',
+    medikal: document.getElementById('sMedikal')?.value.trim() || '',
+    pMode: document.getElementById('pMode')?.value || '',
+    pDat: document.getElementById('pDat')?.value || '',
+    kòm: document.getElementById('pKòm')?.value.trim() || '',
+    sekrete: currentLoggedUser || '',
+    status: 'Annatant',
+    datSoumèt: new Date().toLocaleDateString('fr-HT'),
+  };
+
+  inscriptions.push(record);
+
+  // Show success inside dashboard
+  document.getElementById('inscRef').textContent = ref;
+  document.getElementById('inscForm').style.display = 'none';
+  document.getElementById('inscSuccess').style.display = 'block';
+  document.getElementById('inscSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  showToast(`✓ Enskripsyon "${record.prenom} ${record.siyati}" anrejistre!`);
+}
+
+function resetInscDash() {
+  document.getElementById('inscSuccess').style.display = 'none';
+  document.getElementById('inscForm').style.display = 'block';
+  ['ePrenom','eSiyati','eDatNes','eAdrès','eAnvLek','eAnvKlas',
+   'pPapa','pManman','pTel1','pTel2','pPwofPapa','pPwofMan','pAdrès',
+   'ijNon','ijTel','sAlerji','sMedikal','pDat','pKòm'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  ['eSeks','eKlas','ijRel','sGwoup','pMode'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.selectedIndex = 0;
+  });
+  const prev = document.getElementById('photoPreview');
+  if (prev) prev.style.display = 'none';
+}
+
+// Keep old name as alias just in case
+function resetInscription() { resetInscDash(); }
+
+
+
+// ===== DASHBOARD: INSCRIPTIONS =====
+function renderInscriptions() {
+  const list = document.getElementById('inscList');
+  const empty = document.getElementById('inscEmpty');
+  const filterName = (document.getElementById('filterName')?.value || '').toLowerCase();
+  const filterKlas = document.getElementById('filterKlas')?.value || '';
+  const filterStatus = document.getElementById('filterStatus')?.value || '';
+
+  let filtered = inscriptions.filter(r => {
+    const name = `${r.prenom} ${r.siyati}`.toLowerCase();
+    return (!filterName || name.includes(filterName))
+        && (!filterKlas || r.klas === filterKlas)
+        && (!filterStatus || r.status === filterStatus);
+  });
+
+  if (!filtered.length) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+
+  empty.style.display = 'none';
+  list.innerHTML = filtered.map((r, i) => {
+    const idx = inscriptions.indexOf(r);
+    const badgeClass = r.status === 'Aksepte' ? 'badge-green' : r.status === 'Refize' ? 'badge-red' : 'badge-yellow';
+    return `
+    <div class="insc-card">
+      <div class="insc-card-header">
+        <div>
+          <div class="insc-card-name">👤 ${r.prenom} ${r.siyati}</div>
+          <div style="font-size:0.78rem;color:var(--gray);margin-top:2px">Ref: <strong>${r.ref}</strong> — Soumèt: ${r.datSoumèt}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <span class="badge ${badgeClass}">${r.status}</span>
+          <select onchange="changeInscStatus(${idx}, this.value)" style="padding:5px 10px;border:1px solid #e5e7eb;border-radius:6px;font-size:0.78rem;font-family:'Lato',sans-serif;outline:none">
+            <option ${r.status==='Annatant'?'selected':''}>Annatant</option>
+            <option ${r.status==='Aksepte'?'selected':''}>Aksepte</option>
+            <option ${r.status==='Refize'?'selected':''}>Refize</option>
+          </select>
+          <button class="action-btn danger" onclick="deleteInscription(${idx})">🗑</button>
+        </div>
+      </div>
+      <div class="insc-card-body">
+        <span>🏫 Klas: <strong>${r.klas}</strong></span>
+        <span>📅 Dat Nes: <strong>${r.datNes}</strong></span>
+        <span>👥 Sèks: <strong>${r.seks==='M'?'Gason':'Fi'}</strong></span>
+        <span>👨 Papa: <strong>${r.papa}</strong></span>
+        <span>👩 Manman: <strong>${r.manman}</strong></span>
+        <span>📞 Tel: <strong>${r.tel1}</strong></span>
+        ${r.alèji ? `<span>⚠ Alèji: <strong>${r.alèji}</strong></span>` : ''}
+        ${r.pMode ? `<span>💳 Peman: <strong>${r.pMode}</strong></span>` : ''}
+        ${r.sekrete ? `<span>✍ Sekretè: <strong>${r.sekrete}</strong></span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function changeInscStatus(idx, newStatus) {
+  inscriptions[idx].status = newStatus;
+  renderInscriptions();
+  showToast(`✓ Estati "${inscriptions[idx].prenom} ${inscriptions[idx].siyati}" chanje: ${newStatus}`);
+}
+
+function deleteInscription(idx) {
+  if (!confirm('Efase demann enskripsyon sa a?')) return;
+  inscriptions.splice(idx, 1);
+  renderInscriptions();
+  showToast('🗑 Demann efase.');
+}
+
+function exportInscriptions() {
+  if (!inscriptions.length) { showToast('⚠ Pa gen demann pou ekspòte.'); return; }
+  const rows = [
+    ['Ref','Prenon','Siyati','Klas','Dat Nesans','Sèks','Papa','Manman','Telefòn','Estati','Dat Soumèt'],
+    ...inscriptions.map(r => [r.ref,r.prenom,r.siyati,r.klas,r.datNes,r.seks,r.papa,r.manman,r.tel1,r.status,r.datSoumèt])
+  ];
+  const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `enskripsyon-bethesda-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+  showToast('✓ Fichye CSV telechaje!');
+}
+
+// Hook renderInscriptions when switching to inscriptions tab
+const _origShowDashTab = showDashTab;
+showDashTab = function(tabId) {
+  _origShowDashTab(tabId);
+  if (tabId === 'tab-inscriptions') renderInscriptions();
+};
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
